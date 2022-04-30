@@ -1,6 +1,6 @@
 Feature:
 
     @wip
-    @smoke @regression
+    @regression
   Scenario:
     Given user is on google page
