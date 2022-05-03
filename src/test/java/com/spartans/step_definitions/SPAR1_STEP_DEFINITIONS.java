@@ -1,6 +1,7 @@
 package com.spartans.step_definitions;
 
 import com.github.javafaker.Faker;
+import com.spartans.utils.Base;
 import com.spartans.utils.ConfigurationReader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -14,10 +15,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
 
-public class SPAR1_STEP_DEFINITIONS {
+public class SPAR1_STEP_DEFINITIONS extends Base {
 
-    static Response response;
-    static RequestSpecification requestSpecification;
+
 
     @Given("base URL + {string}")
     public void base_url(String path) {
@@ -91,4 +91,6 @@ public class SPAR1_STEP_DEFINITIONS {
 
         assertThat(response.jsonPath().getString("error"),is(errorMessage));
     }
+
+
 }

@@ -22,12 +22,12 @@ Feature: Display list of all Spartans
     Then response code 200
     And response Content Type "application/json;charset=UTF-8"
 
-  @smoke @regression @wip
+  @smoke @regression
   Scenario: GET request with invalid credentials
     When GET request with invalid credentials
     Then response code 401
 
-  @smoke @regression @wip
+  @smoke @regression
   Scenario: GET request with no credentials
     When GET request with no credentials
     Then response code 401
