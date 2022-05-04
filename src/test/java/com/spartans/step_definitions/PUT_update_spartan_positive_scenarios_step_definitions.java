@@ -1,10 +1,12 @@
 package com.spartans.step_definitions;
 
 import com.spartans.utils.Base;
+import com.spartans.utils.GenerateSpartan;
 import com.spartans.utils.Spartan;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -23,17 +25,15 @@ public class PUT_update_spartan_positive_scenarios_step_definitions extends Base
     }
     @Given("valid request body")
     public void valid_request_body() {
-        Spartan spartan = new Spartan();
-        spartan.setName("Dimo");
-        spartan.setGender("Male");
-        spartan.setPhone(1231231231l);
+    requestSpecification.body(GenerateSpartan.generateSparta());
 
 
     }
     @When("user send PUT request")
     public void user_send_put_request() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        response = requestSpecification.when().put();
+
     }
 
 

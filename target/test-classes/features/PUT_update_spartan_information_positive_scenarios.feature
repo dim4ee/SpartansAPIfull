@@ -2,7 +2,7 @@ Feature: Update one spartan information
 
 
   Background:
-    Given base URL + "/api/spartans"
+    Given base URL + "/api/spartans/{id}"
 
     @smoke @regression @wip
     Scenario: send a PUT request with valid user credentials,
@@ -20,3 +20,37 @@ Feature: Update one spartan information
       When user send PUT request
 
       Then response code 204
+
+  @smoke @regression @wip
+  Scenario: send a PUT request with valid editor credentials,
+  valid path parameters and valid request body
+    Given accept ContentType.JSON
+
+    And basic auth with admin credentials
+
+    And contentType ContentType.JSON
+
+    And valid path parameters
+
+    And valid request body
+
+    When user send PUT request
+
+    Then response code 204
+
+  @smoke @regression @wip
+  Scenario: send a PUT request with valid editor credentials,
+  valid path parameters and valid request body
+    Given accept ContentType.JSON
+
+    And basic auth with editor credentials
+
+    And contentType ContentType.JSON
+
+    And valid path parameters
+
+    And valid request body
+
+    When user send PUT request
+
+    Then response code 204

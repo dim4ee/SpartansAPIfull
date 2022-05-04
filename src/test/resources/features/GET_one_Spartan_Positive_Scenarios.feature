@@ -1,10 +1,11 @@
+@smoke @regression
 Feature: Display one spartan information
 
 
   Background:
     Given base URL + "/api/spartans"
 
-  @smoke @regression
+
   Scenario: GET one Spartan with user credentials and valid path parameters
     Given accept ContentType.JSON
     And basic auth with user credentials
@@ -18,7 +19,7 @@ Feature: Display one spartan information
       | gender | Male       |
       | phone  | 5278678322 |
 
-    @smoke @regression
+
   Scenario: GET one Spartan with editor credentials and valid path parameters
     Given accept ContentType.JSON
     And basic auth with editor credentials
@@ -32,7 +33,7 @@ Feature: Display one spartan information
       | gender | Male       |
       | phone  | 5278678322 |
 
-      @smoke @regression
+
     Scenario: GET one Spartan with admin credentials and valid path parameters
       Given accept ContentType.JSON
       And basic auth with admin credentials
