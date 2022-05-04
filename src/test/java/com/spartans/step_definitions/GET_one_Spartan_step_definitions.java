@@ -38,14 +38,6 @@ public class GET_one_Spartan_step_definitions extends Base {
         response = requestSpecification.when().get("/{id}");
     }
 
-    @Then("response body should be")
-    public void response_body_should_be(Map<String,Object> dataTable) {
-
-        Map<String,Object> responseBody = response.body().as(Map.class);
-
-        Assertions.assertEquals(dataTable.toString(),responseBody.toString());
-    }
-
 
     @And("basic auth with editor credentials")
     public void basicAuthWithEditorCredentials() {

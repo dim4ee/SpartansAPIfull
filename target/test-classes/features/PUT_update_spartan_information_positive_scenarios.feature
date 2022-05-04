@@ -1,10 +1,11 @@
+@smoke @regression
 Feature: Update one spartan information
 
 
   Background:
     Given base URL + "/api/spartans/{id}"
 
-    @smoke @regression @wip
+
     Scenario: send a PUT request with valid user credentials,
     valid path parameters and valid request body
       Given accept ContentType.JSON
@@ -19,9 +20,9 @@ Feature: Update one spartan information
 
       When user send PUT request
 
-      Then response code 204
+      Then response code 403
 
-  @smoke @regression @wip
+
   Scenario: send a PUT request with valid editor credentials,
   valid path parameters and valid request body
     Given accept ContentType.JSON
@@ -38,7 +39,7 @@ Feature: Update one spartan information
 
     Then response code 204
 
-  @smoke @regression @wip
+
   Scenario: send a PUT request with valid editor credentials,
   valid path parameters and valid request body
     Given accept ContentType.JSON

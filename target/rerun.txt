@@ -1,1 +1,0 @@
-file:src/test/resources/features/PUT_update_spartan_information_positive_scenarios.feature:8
