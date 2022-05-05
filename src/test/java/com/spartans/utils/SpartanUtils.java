@@ -142,4 +142,26 @@ public class SpartanUtils extends Base {
                 .when().put("/{id}");
     }
 
+    public static Spartan postSpartan(){
+
+        Spartan spartan = GenerateSpartan.generateSparta();
+
+
+        baseURI = "http://54.197.5.86:7000";
+        basePath = "/api/spartans";
+
+        String username = ConfigurationReader.getProperty("admin_username");
+        String password = ConfigurationReader.getProperty("admin_password");
+
+        spartan = given().accept(ContentType.JSON)
+                .and().auth().basic(username, password)
+                .contentType(ContentType.JSON)
+                .body(spartan)
+                .when().post()
+                .then().extract().jsonPath().getObject("data",Spartan.class);
+
+        return spartan;
+
+    }
+
 }

@@ -10,4 +10,5 @@ public class Base {
     public static Response response;
     public static RequestSpecification requestSpecification;
 
+    ;
 }

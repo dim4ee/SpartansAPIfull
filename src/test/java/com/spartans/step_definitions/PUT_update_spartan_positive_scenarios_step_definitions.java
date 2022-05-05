@@ -16,6 +16,7 @@ public class PUT_update_spartan_positive_scenarios_step_definitions extends Base
     Spartan spartan = new Spartan();
     int id;
 
+
     @Given("contentType ContentType.JSON")
     public void content_type_content_type_json() {
         requestSpecification.contentType(ContentType.JSON);
